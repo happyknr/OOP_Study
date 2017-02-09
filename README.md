@@ -4,7 +4,9 @@
 
 ## 1주차
 
- 1\) 
+1\) JVM
+
+2\) java wrapper class
 
 ## 2주차
 
