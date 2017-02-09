@@ -15,5 +15,5 @@
 * 객체와 클래스
 * 클래스의 구성 멤버 : 필드, 생성자, 메소드
 
-2\) java.lang.reference
+2\) java.lang.ref package
 
