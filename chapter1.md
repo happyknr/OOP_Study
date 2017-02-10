@@ -52,9 +52,6 @@ public String getFileContent(String filename) {
 
 * Cache 구현 등됨에 사용
 
-```
-
-```
 
 #### PhantomReference
 
