@@ -67,6 +67,8 @@ Image called
 #### 메소드
 
 * 어떤 작업을 수행하기 위한 명령문의 집합
+* 주로 어떤 값을 입력받아 처리하고 그 결과를 돌려줌. 경우에 따라 입력받는 값이 없을 수도 있고 결과를 반환하지 않을 수도 있음
+* 반복적으로 사용되는 코드를 줄이기 위해 사용됨 !
 
 ### 2\) java.lang.ref package
 
@@ -323,7 +325,7 @@ foobar is finalizing resources
 
 ###### - [http://nukestorm.tistory.com/](http://nukestorm.tistory.com/)
 
-###### - http://rank01.tistory.com
+###### - [http://rank01.tistory.com](http://rank01.tistory.com)
 
 ###### - [http://blog.naver.com/PostView.nhn?blogId=huewu&logNo=110095553797](http://blog.naver.com/PostView.nhn?blogId=huewu&logNo=110095553797)
 
