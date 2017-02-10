@@ -66,7 +66,7 @@ Image called
 
 #### 메소드
 
- - 어떤 작업을 수행하기 위한 명령문의 집합
+* 어떤 작업을 수행하기 위한 명령문의 집합
 
 ### 2\) java.lang.ref package
 
@@ -320,6 +320,8 @@ foobar is finalizing resources
 ```
 
 ###### 참고
+
+###### - http://nukestorm.tistory.com/
 
 ###### - [http://blog.naver.com/PostView.nhn?blogId=huewu&logNo=110095553797](http://blog.naver.com/PostView.nhn?blogId=huewu&logNo=110095553797)
 
