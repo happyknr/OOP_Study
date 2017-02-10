@@ -31,17 +31,14 @@
 
 #### SoftReference
 
-: GC가 실행 후 JVM에서 메모리 공간이 없으면 SoftReference 인스턴스를 GC 대상으로 함 \(as late as possible\)
+* 힙 메모리 상의 특정 객체를 참조 \(as late as possible\)
+* JVM이 관리하는 메모리의 공간이 부족할 경우, SoftReference 참조만 갖고 있는 객체는 GC의 수거 대상이 됨
 
 #### PhantomReference
 
 : softReference, weakReference 보다 엄청 약함. GC가 돌기 전\(즉, GC 대상이라고 결정할 때, finalize\(\) 호출 후\) 메모리에서 정리됨. GC 되기 전에 cleanup 해야 할 때 사용됨. 내부적으로는 유지하고 있지만, 객체를 다시 꺼내오면 null이 됨.
 
- - 아주 특수한 경우에 사용됨
-
-
-
-
+* 아주 특수한 경우에 사용됨
 
 
 
