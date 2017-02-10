@@ -18,11 +18,13 @@ public class TestClass {
 }
 ```
 
-* 객체, 인스턴스
+#### 객체
 
-  ```
-  Animal cat = new Animal();
-  ```
+ - 
+
+```
+Animal cat = new Animal();
+```
 
 * 필드
 
