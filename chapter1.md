@@ -27,23 +27,23 @@
 
 #### WeakReference
 
-* WeakReference에 의해 참조된 객체는 GC가 발생하기 전까지는 객체에 대한 참조를 유지하지만 GC가 발생하면 무조건 수거됨 \(GC의 실행 주기와 일치\)
+* WeakReference에 의해 참조된 객체는 GC가 발생하기 전까지는 객체에 대한 참조를 유지하지만 **GC가 발생하면 무조건 수거됨 \(GC의 실행 주기와 일치\)**
 * 짧은 시간동안 자주 쓰일 수 있는 객체를 Cache 할 때 유용하게 이용됨
 
 #### SoftReference
 
 * 힙 메모리 상의 특정 객체를 참조 \(as late as possible\)
 
-* JVM이 관리하는 메모리의 공간이 부족할 경우\(OutOfMemoryError\), SoftReference 참조만 갖고 있는 객체는 GC의 수거 대상이 됨
+* JVM이 관리하는 **메모리의 공간이 부족할 경우\(OutOfMemoryError\), SoftReference 참조만 갖고 있는 객체는 GC의 수거 대상이 됨**
 
 * Cache 구현 등됨에 사용
 
 #### PhantomReference
 
 * finalize\(\)가 호출된 이후 그 객체와 관련된 사후 작업을 수행할 필요가 있을 때 사용됨
-* 다시는 객체에 참조할 수 없다는 특이점이 있음! phantomReference는 참조되는 객체를 내부적으로 유지하고 있지만 그 객체를 다시 꺼내오는 get\(\) method에서 무조건 null을 반환하도록 되어 있는데 이는 phantomReference가 참조하는 객체는 다시 활용될 수 없고 GC가 수행되면서 그 객체가 사라질 때 관련된 사후 작업만을 할 수 있다는 의미 ! \(null이 나와 객체가 사라졌다고 생각할 수 있으나 실제로는 사라진 것이 아님\)
+* **다시는 객체에 참조할 수 없다**는 특이점이 있음! phantomReference는 참조되는 객체를 내부적으로 유지하고 있지만 그 객체를 다시 꺼내오는 get\(\) method에서 **무조건 null을 반환**하도록 되어 있는데 이는 phantomReference가 참조하는 객체는 다시 활용될 수 없고 GC가 수행되면서 그 객체가 사라질 때 관련된 사후 작업만을 할 수 있다는 의미 ! \(null이 나와 객체가 사라졌다고 생각할 수 있으나 실제로는 사라진 것이 아님\)
 
-* 때문에 PhantomReference는 명시적으로 객체를 소멸시켜주는 clear\(\)를 반.드.시. 호출해야 함
+* 때문에 PhantomReference는 명시적으로 객체를 소멸시켜주는** clear\(\)**를 반.드.시. 호출해야 함
 
 * 아주 특수한 경우에 사용됨
 
