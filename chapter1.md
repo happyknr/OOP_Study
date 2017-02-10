@@ -20,7 +20,7 @@ public class TestClass {
 
 #### 객체
 
- - 
+ - 데이터\(특성\)와 그 데이터에 관련되는 동작\(절차, 방법, 기능-로직\)이 결합된 것
 
 ```
 Animal cat = new Animal();
