@@ -321,7 +321,9 @@ foobar is finalizing resources
 
 ###### 참고
 
-###### - http://nukestorm.tistory.com/
+###### - [http://nukestorm.tistory.com/](http://nukestorm.tistory.com/)
+
+###### - http://rank01.tistory.com
 
 ###### - [http://blog.naver.com/PostView.nhn?blogId=huewu&logNo=110095553797](http://blog.naver.com/PostView.nhn?blogId=huewu&logNo=110095553797)
 
