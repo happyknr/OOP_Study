@@ -5,7 +5,7 @@
 * 클래스
 * 객체, 인스턴스
 
-
+    Animal cat = new Animal\(\);
 
 * 필드
 * 생성자
