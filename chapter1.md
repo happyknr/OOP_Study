@@ -25,13 +25,13 @@ public class TestClass {
 
 > 객체 생성 과정
 >
->  1. new 연산자가 객체\(Animal\)가 저장될 메모리 공간 할당
+> 1. new 연산자가 객체\(Animal\)가 저장될 메모리 공간 할당
 >
->  2. 생성자가 객체\(Animal\)를 초기화 후 종료
+> 2. 생성자가 객체\(Animal\)를 초기화 후 종료
 >
->  3. new 연산자가 새로 생성된 객체의 주소\(reference\)를 변수\(cat\)에 저장
+> 3. new 연산자가 새로 생성된 객체의 주소\(reference\)를 변수\(cat\)에 저장
 >
->  4. 변수\(cat\)를 통해 해당 객체에 접근 가능
+> 4. 변수\(cat\)를 통해 해당 객체에 접근 가능
 
 ```
 Animal cat = new Animal();
@@ -40,6 +40,8 @@ Animal cat = new Animal();
 * 필드
 
 #### 생성자
+
+ - rkskek
 
 * 객체 생성시 객체를 초기화하고 heap에 저장하는 메소드
 
