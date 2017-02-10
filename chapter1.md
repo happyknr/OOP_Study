@@ -40,6 +40,7 @@ Animal cat = new Animal();
 #### 필드\(field\)
 
 * 클래스 안에서 선언되는 멤버 변수
+* 단, main\(\) 메서드 안에서 정의한 변수는 필드라고 하지 않음
 
 ```
 class A {
