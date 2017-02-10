@@ -29,7 +29,7 @@
 
  - 
 
-#### SoftReference
+* #### SoftReference
 
 * 힙 메모리 상의 특정 객체를 참조 \(as late as possible\)
 * JVM이 관리하는 메모리의 공간이 부족할 경우\(OutOfMemoryError\), SoftReference 참조만 갖고 있는 객체는 GC의 수거 대상이 됨
