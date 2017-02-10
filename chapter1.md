@@ -25,8 +25,6 @@ public class TestClass {
 
 > 객체 생성 과정
 
-&gt;&gt; 가나다
-
 ```
 Animal cat = new Animal();
 ```
