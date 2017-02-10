@@ -38,6 +38,20 @@
 
 * Cache 구현 등됨에 사용
 
+```
+...	
+WeakReference<String> wr;	
+public String getFileContent(String filename) {
+	String fileContent = (wr != null) ? wr.get() : null;  // WeakReference에 의해 파일 내용이 보존되어 있는지 체크.
+	if (fileContent == null) {
+		fileContent = readFileToString(filename);
+		wr = new WeakReference<String>(fileContent); // 글 내용을 WeakReference에 저장.
+	}
+	return fileContent;
+}
+...
+```
+
 #### PhantomReference
 
 * finalize\(\)가 호출된 이후 그 객체와 관련된 사후 작업을 수행할 필요가 있을 때 사용됨
@@ -51,7 +65,7 @@
 public class PhantomReference<T> extends Reference<T> {
     ...
     public T get() {
-    	return null;    
+        return null;    
     }
 }
 ```
