@@ -2,7 +2,10 @@
 
 ### 1\) 객체 지향 개념
 
-* 클래스
+#### 클래스
+
+ - 객체지향 프로그래밍\(Object-Oriented Programming\)에서 로직과 데이터를 묶어둔 하나의 단위
+
 * 객체, 인스턴스
 
   ```
@@ -272,7 +275,7 @@ foobar is finalizing resources
 
 ###### - [http://egloos.zum.com/skyswim42/v/3677479](http://egloos.zum.com/skyswim42/v/3677479)
 
-###### - http://knight76.tistory.com/entry/SofreReference-WeakReference-PhantomReference
+###### - [http://knight76.tistory.com/entry/SofreReference-WeakReference-PhantomReference](http://knight76.tistory.com/entry/SofreReference-WeakReference-PhantomReference)
 
 
 
