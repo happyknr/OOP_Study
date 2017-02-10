@@ -40,7 +40,7 @@
 
 #### PhantomReference
 
-: softReference, weakReference 보다 엄청 약함. GC가 돌기 전\(즉, GC 대상이라고 결정할 때, finalize\(\) 호출 후\) 메모리에서 정리됨. GC 되기 전에 cleanup 해야 할 때 사용됨. 내부적으로는 유지하고 있지만, 객체를 다시 꺼내오면 null이 됨.
+ - 
 
 * 아주 특수한 경우에 사용됨
 
