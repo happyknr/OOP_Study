@@ -52,6 +52,57 @@ public String getFileContent(String filename) {
 
 * Cache 구현 등됨에 사용
 
+```
+package org.apache.commons.pool.impl;
+
+import java.lang.ref.SoftReference; 
+import java.lang.ref.ReferenceQueue; 
+import java.lang.ref.Reference; 
+import java.util.ArrayList; 
+import java.util.Iterator; 
+import java.util.List; 
+import java.util.NoSuchElementException;
+
+import org.apache.commons.pool.BaseObjectPool; 
+import org.apache.commons.pool.ObjectPool; 
+import org.apache.commons.pool.PoolableObjectFactory; 
+import org.apache.commons.pool.PoolUtils;
+
+
+public class SoftReferenceObjectPool extends BaseObjectPool implements ObjectPool { 
+….
+
+
+
+public synchronized void addObject() throws Exception { 
+        assertOpen(); 
+        if (_factory == null) { 
+            throw new IllegalStateException("Cannot add objects without a factory."); 
+        } 
+        Object obj = _factory.makeObject();
+
+        boolean success = true; 
+        if(!_factory.validateObject(obj)) { 
+            success = false; 
+        } else { 
+            _factory.passivateObject(obj); 
+        }
+
+        boolean shouldDestroy = !success; 
+        if(success) { 
+           _pool.add(new SoftReference(obj, refQueue)); 
+            notifyAll(); // _numActive has changed 
+        }
+
+        if(shouldDestroy) { 
+            try { 
+                _factory.destroyObject(obj); 
+            } catch(Exception e) { 
+                // ignored 
+            } 
+        } 
+    } 
+```
 
 #### PhantomReference
 
