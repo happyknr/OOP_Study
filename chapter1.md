@@ -27,7 +27,7 @@
 
 #### WeakReference
 
-* WeakReference에 의해 참조된 객체는 GC가 발생하기 전까지는 객체에 대한 참조를 유지하지만 GC가 발생하면 무조건 수거됨
+* WeakReference에 의해 참조된 객체는 GC가 발생하기 전까지는 객체에 대한 참조를 유지하지만 GC가 발생하면 무조건 수거됨 \(GC의 실행 주기와 일치\)
 
 #### SoftReference
 
