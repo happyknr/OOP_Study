@@ -4,7 +4,5 @@
 
 ### 2\) java.lang.ref package
 
-!\[test\]&lt;img.jpg&gt;
-
-
+!\[test\]\(img.jpg\)
 
