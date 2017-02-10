@@ -43,7 +43,8 @@ Animal cat = new Animal();
 
 > 필드와 변수 차이
 >
->  - 필드 : 중괄호{} 안에서 어디든지 선언이 가능하지만 메서드와 생성자의 요소 밖에만 생성이 되어야 함
+> * 필드 : 중괄호{} 안에서 어디든지 선언이 가능하지만 메서드와 생성자의 요소 밖에 선언
+> * 변수 : 메서드와 생성자 중괄호{} 안에 선언
 
 ```
 class A {
@@ -337,6 +338,8 @@ foobar is finalizing resources
 ###### 참고
 
 ###### - [http://nukestorm.tistory.com/](http://nukestorm.tistory.com/)
+
+###### - http://hunit.tistory.com/154
 
 ###### - [http://rank01.tistory.com](http://rank01.tistory.com)
 
