@@ -52,7 +52,18 @@ Animal cat = new Animal();
 > * 생성자는 오직 다른 생성자만이 호출할 수 있음
 > * this\(\)를 일반 메소드로 명시할 수 없음
 
-* 
+```
+class Image {
+    Image() {
+        System.out.println("Image() called");
+    }
+}
+
+// Image img = new Image(); 실행 시 생성자가 실행됨
+// 출력 결과
+Image called
+```
+
 * 메소드
 
 ### 2\) java.lang.ref package
