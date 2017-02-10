@@ -31,17 +31,30 @@
 * 짧은 시간동안 자주 쓰일 수 있는 객체를 Cache 할 때 유용하게 이용됨
 
 ```
-...    
-WeakReference<String> wr;    
-public String getFileContent(String filename) {
-    String fileContent = (wr != null) ? wr.get() : null;  // WeakReference에 의해 파일 내용이 보존되어 있는지 체크.
-    if (fileContent == null) {
-        fileContent = readFileToString(filename);
-        wr = new WeakReference<String>(fileContent); // 글 내용을 WeakReference에 저장.
-    }
-    return fileContent;
+import java.lang.ref.WeakReference;
+
+public class ReferenceTest { 
+    public static void main(String[] args) throws InterruptedException { 
+        Student s1 = new Student(1); 
+        System.out.println("1: " + s1); 
+        WeakReference<Student> ws = new WeakReference<Student>(s1); 
+        System.out.println("2: " + ws.get()); 
+        s1 = null; 
+        System.gc(); 
+        Thread.sleep(1000); 
+        System.out.println("3: " + ws.get()); 
+    } 
 }
-...
+
+class Student { 
+    int id; 
+    public Student(int id) { 
+        this.id = id; 
+    } 
+    public String toString() { 
+        return "[id=" + id + "]"; 
+    } 
+} 
 ```
 
 #### SoftReference
