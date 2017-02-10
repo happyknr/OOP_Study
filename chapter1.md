@@ -27,7 +27,7 @@
 
 #### WeakReference
 
-: 객체가 사용중이기는 하지만, 더 이상 사용하지 않을 것 같은 경우 GC를 실행하면 메모리에서 정리됨
+ - 
 
 #### SoftReference
 
@@ -41,13 +41,9 @@
 
 * 아주 특수한 경우에 사용됨
 
-
-
 ###### 참고
 
-###### - http://blog.naver.com/PostView.nhn?blogId=huewu&logNo=110095553797
-
-
+###### - [http://blog.naver.com/PostView.nhn?blogId=huewu&logNo=110095553797](http://blog.naver.com/PostView.nhn?blogId=huewu&logNo=110095553797)
 
 
 
