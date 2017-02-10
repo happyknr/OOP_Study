@@ -37,7 +37,9 @@ public class TestClass {
 Animal cat = new Animal();
 ```
 
-* 필드
+#### 필드
+
+ - 클래스 안에서 선언되는 멤버 변수
 
 #### 생성자
 
