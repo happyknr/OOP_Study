@@ -47,11 +47,13 @@
 
 * 아주 특수한 경우에 사용됨
 
+\`\`\` 
+
 ###### 참고
 
 ###### - [http://blog.naver.com/PostView.nhn?blogId=huewu&logNo=110095553797](http://blog.naver.com/PostView.nhn?blogId=huewu&logNo=110095553797)
 
-###### - http://egloos.zum.com/skyswim42/v/3677479
+###### - [http://egloos.zum.com/skyswim42/v/3677479](http://egloos.zum.com/skyswim42/v/3677479)
 
 
 
