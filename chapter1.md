@@ -30,6 +30,20 @@
 * WeakReference에 의해 참조된 객체는 GC가 발생하기 전까지는 객체에 대한 참조를 유지하지만 **GC가 발생하면 무조건 수거됨 \(GC의 실행 주기와 일치\)**
 * 짧은 시간동안 자주 쓰일 수 있는 객체를 Cache 할 때 유용하게 이용됨
 
+```
+...    
+WeakReference<String> wr;    
+public String getFileContent(String filename) {
+    String fileContent = (wr != null) ? wr.get() : null;  // WeakReference에 의해 파일 내용이 보존되어 있는지 체크.
+    if (fileContent == null) {
+        fileContent = readFileToString(filename);
+        wr = new WeakReference<String>(fileContent); // 글 내용을 WeakReference에 저장.
+    }
+    return fileContent;
+}
+...
+```
+
 #### SoftReference
 
 * 힙 메모리 상의 특정 객체를 참조 \(as late as possible\)
@@ -39,17 +53,7 @@
 * Cache 구현 등됨에 사용
 
 ```
-...	
-WeakReference<String> wr;	
-public String getFileContent(String filename) {
-	String fileContent = (wr != null) ? wr.get() : null;  // WeakReference에 의해 파일 내용이 보존되어 있는지 체크.
-	if (fileContent == null) {
-		fileContent = readFileToString(filename);
-		wr = new WeakReference<String>(fileContent); // 글 내용을 WeakReference에 저장.
-	}
-	return fileContent;
-}
-...
+
 ```
 
 #### PhantomReference
