@@ -15,7 +15,7 @@
 
 * 메소드
 
-* ### 2\) java.lang.ref package
+### 2\) java.lang.ref package
 
  - 
 
