@@ -144,7 +144,7 @@ public class ReferenceTest {
         test1(); 
         test2(); 
     } 
-    
+
     public static void test1() { 
         ReferenceQueue<Foo> queue = new ReferenceQueue<Foo>(); 
         ArrayList<PhantomReference<Foo>> list = new ArrayList<PhantomReference<Foo>>();
@@ -174,23 +174,23 @@ public class ReferenceTest {
         ReferenceQueue<Foo> queue = new ReferenceQueue<Foo>(); 
         ArrayList< FinalizeStuff<Foo>> list = new ArrayList<FinalizeStuff<Foo>>(); 
         ArrayList<Foo> foobar = new ArrayList<Foo>(); 
-         
+
         for ( int i = 0; i < 10; i++) { 
             Foo o = new Foo( Integer.toOctalString( i)); 
             foobar.add(o); 
             list.add(new FinalizeStuff<Foo>(o, queue)); 
         } 
-         
+
         // release all references to Foo and make sure the garbage collector does it’s magic 
         foobar = null; 
         System.gc(); 
-         
+
         // should be enqueued 
         Reference<? extends Foo> referenceFromQueue; 
         for ( PhantomReference<Foo> reference : list) { 
             System.out.println(reference.isEnqueued()); 
         } 
-         
+
         // now we can call bar to do what ever it is we need done 
         while ( (referenceFromQueue = queue.poll()) != null) { 
             ((FinalizeStuff)referenceFromQueue).bar(); 
@@ -217,7 +217,7 @@ class FinalizeStuff<Foo> extends PhantomReference<Foo> {
     public FinalizeStuff(Foo foo, ReferenceQueue<? super Foo> queue) { 
         super(foo, queue); 
     } 
-  
+
     public void bar() { 
         System.out.println("foobar is finalizing resources"); 
     } 
@@ -271,6 +271,8 @@ foobar is finalizing resources
 ###### - [http://blog.naver.com/PostView.nhn?blogId=huewu&logNo=110095553797](http://blog.naver.com/PostView.nhn?blogId=huewu&logNo=110095553797)
 
 ###### - [http://egloos.zum.com/skyswim42/v/3677479](http://egloos.zum.com/skyswim42/v/3677479)
+
+###### - http://knight76.tistory.com/entry/SofreReference-WeakReference-PhantomReference
 
 
 
