@@ -132,12 +132,138 @@ public synchronized void addObject() throws Exception {
 * 아주 특수한 경우에 사용됨
 
 ```
-public class PhantomReference<T> extends Reference<T> {
-    ...
-    public T get() {
-        return null;    
+package snippet;
+
+import java.lang.ref.PhantomReference; 
+import java.lang.ref.Reference; 
+import java.lang.ref.ReferenceQueue; 
+import java.util.ArrayList;
+
+public class ReferenceTest { 
+    public static void main(String[] args) throws InterruptedException { 
+        test1(); 
+        test2(); 
+    } 
+    
+    public static void test1() { 
+        ReferenceQueue<Foo> queue = new ReferenceQueue<Foo>(); 
+        ArrayList<PhantomReference<Foo>> list = new ArrayList<PhantomReference<Foo>>();
+
+        for (int i = 0; i < 10; i++) { 
+            Foo o = new Foo(Integer.toOctalString(i)); 
+            list.add(new PhantomReference<Foo>(o, queue)); 
+        }
+
+        // make sure the garbage collector does it’s magic 
+        System.gc();
+
+        // lets see what we’ve got 
+        Reference<? extends Foo> referenceFromQueue;
+
+        for (PhantomReference<Foo> reference : list) { 
+            System.out.println("x: " + reference.isEnqueued()); 
+        } 
+        while ((referenceFromQueue = queue.poll()) != null) { 
+            System.out.println("y: " + referenceFromQueue.get()); 
+            referenceFromQueue.clear(); 
+        } 
     }
+
+    public static void test2() { 
+        // initialize 
+        ReferenceQueue<Foo> queue = new ReferenceQueue<Foo>(); 
+        ArrayList< FinalizeStuff<Foo>> list = new ArrayList<FinalizeStuff<Foo>>(); 
+        ArrayList<Foo> foobar = new ArrayList<Foo>(); 
+         
+        for ( int i = 0; i < 10; i++) { 
+            Foo o = new Foo( Integer.toOctalString( i)); 
+            foobar.add(o); 
+            list.add(new FinalizeStuff<Foo>(o, queue)); 
+        } 
+         
+        // release all references to Foo and make sure the garbage collector does it’s magic 
+        foobar = null; 
+        System.gc(); 
+         
+        // should be enqueued 
+        Reference<? extends Foo> referenceFromQueue; 
+        for ( PhantomReference<Foo> reference : list) { 
+            System.out.println(reference.isEnqueued()); 
+        } 
+         
+        // now we can call bar to do what ever it is we need done 
+        while ( (referenceFromQueue = queue.poll()) != null) { 
+            ((FinalizeStuff)referenceFromQueue).bar(); 
+            referenceFromQueue.clear(); 
+        } 
+    } 
 }
+
+
+class Foo { 
+    private String bar;
+
+    public Foo(String bar) { 
+        this.bar = bar; 
+    }
+
+    public String get() { 
+        return bar; 
+    } 
+}
+
+
+class FinalizeStuff<Foo> extends PhantomReference<Foo> { 
+    public FinalizeStuff(Foo foo, ReferenceQueue<? super Foo> queue) { 
+        super(foo, queue); 
+    } 
+  
+    public void bar() { 
+        System.out.println("foobar is finalizing resources"); 
+    } 
+}
+
+// 출력 결과
+x: true 
+x: true 
+x: true 
+x: true 
+x: true 
+x: true 
+x: true 
+x: true 
+x: true 
+x: true 
+y: null 
+y: null 
+y: null 
+y: null 
+y: null 
+y: null 
+y: null 
+y: null 
+y: null 
+y: null 
+true 
+true 
+true 
+true 
+true 
+true 
+true 
+true 
+true 
+true 
+foobar is finalizing resources 
+foobar is finalizing resources 
+foobar is finalizing resources 
+foobar is finalizing resources 
+foobar is finalizing resources 
+foobar is finalizing resources 
+foobar is finalizing resources 
+foobar is finalizing resources 
+foobar is finalizing resources 
+foobar is finalizing resources 
 ```
 
 ###### 참고
