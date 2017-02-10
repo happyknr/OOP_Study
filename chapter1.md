@@ -47,7 +47,14 @@
 
 * 아주 특수한 경우에 사용됨
 
-\`\`\` 
+```
+public class PhantomReference<T> extends Reference<T> {
+    ...
+    public T get() {
+    	return null;    
+    }
+}
+```
 
 ###### 참고
 
