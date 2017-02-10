@@ -55,6 +55,11 @@ class Student {
         return "[id=" + id + "]"; 
     } 
 } 
+
+// 출력 결과
+1: [id=1] 
+2: [id=1] 
+3: null 
 ```
 
 #### SoftReference
