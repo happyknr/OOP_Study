@@ -64,7 +64,9 @@ class Image {
 Image called
 ```
 
-* 메소드
+#### 메소드
+
+ - 어떤 작업을 수행하기 위한 명령문의 집합
 
 ### 2\) java.lang.ref package
 
