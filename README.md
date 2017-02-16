@@ -19,7 +19,7 @@
 
 ## 3주차\(17.02.18\)
 
- - JVM의 힙영역과 관련하여 인스턴스 멤버와 this 정적 멤버와 static, final필드와 상수 패키지, 접근 제한자 Getter Setter에 대한 개념
+* JVM의 힙영역과 관련하여 인스턴스 멤버와 this 정적 멤버와 static, final필드와 상수 패키지, 접근 제한자 Getter Setter에 대한 개념
 
 
 
