@@ -45,7 +45,17 @@ abstract class Factory {
 
 #### 2\) 디폴트의 구현을 준비
 
- - 디폴트로 구현을 준비해두고 하위 클래스에서 구현하지 않았을 때 사용함
+* 디폴트로 구현을 준비해두고 하위 클래스에서 구현하지 않았을 때 사용함
+* 단, 이 경우에는 Product 클래스에 대해서 직접 new를 이용하므로 Product 클래스를 추상 클래스로 선언할 수 없음
+
+```
+class Factory {
+    public Product createProduct(String name) {
+        return new Product(name);
+    }
+    ...
+}
+```
 
 
 
