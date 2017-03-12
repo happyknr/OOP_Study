@@ -71,3 +71,7 @@ class Factory {
 
 
 
+### 팩토리 패턴 연습
+
+![](/assets/factory_pattern_knr)
+
