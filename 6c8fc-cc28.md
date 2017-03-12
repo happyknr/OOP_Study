@@ -33,7 +33,15 @@
 
 #### 1\) 추상 메소드
 
- - factoryMethod 메소드를 기술할 때 추상메소드로 기술함
+* factoryMethod 메소드를 기술할 때 추상메소드로 기술함
+* 추상메소드로 기술하면 하위 클래스에서 반드시 이 메소드를 구현해야 함. 구현되어 있지 않을 경우 컴파일할 때 검출됨!
+
+```
+abstract class Factory {
+    public abstract Product createProduct(String name);
+    ...
+}
+```
 
 
 
