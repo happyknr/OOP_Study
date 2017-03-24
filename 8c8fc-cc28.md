@@ -42,5 +42,7 @@ public class EnumExample {
   * 코드가 단순해지며 가독성이 좋음
   * 키워드 enum을 사용하기 때문에 구현의 의도가 열거임을 분명하게 나타낼 수 있음
 
+http://www.nextree.co.kr/p11686/
+
 
 
